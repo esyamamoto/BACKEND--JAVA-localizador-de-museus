@@ -3,12 +3,13 @@ package com.betrybe.museumfinder.util;
 import com.betrybe.museumfinder.model.Museum;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * Helper class that load a list of objects.
