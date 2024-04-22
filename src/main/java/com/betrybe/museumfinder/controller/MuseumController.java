@@ -4,7 +4,6 @@ import com.betrybe.museumfinder.dto.MuseumCreationDto;
 import com.betrybe.museumfinder.dto.MuseumDto;
 import com.betrybe.museumfinder.model.Coordinate;
 import com.betrybe.museumfinder.model.Museum;
-import com.betrybe.museumfinder.service.MuseumService;
 import com.betrybe.museumfinder.service.MuseumServiceInterface;
 import com.betrybe.museumfinder.util.ModelDtoConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,9 @@ public class MuseumController {
    */
   @PostMapping
   public ResponseEntity<MuseumDto> createMuseum(@RequestBody MuseumCreationDto newMuseum) {
-    Museum museum = ModelDtoConverter.dtoToModel(newMuseum);
-    Museum createMuseum = museumService.createMuseum(museum);
-    MuseumDto createMuseumDto = ModelDtoConverter.modelToDto(createMuseum);
+    Museum museum = ModelDtoConverter.dtoToModel(newMuseum); // dto --> objeto do museum
+    Museum createMuseum = museumService.createMuseum(museum); // chama o service para criar museum
+    MuseumDto createMuseumDto = ModelDtoConverter.modelToDto(createMuseum);  // museum pra dto
     return ResponseEntity.status(HttpStatus.CREATED).body(createMuseumDto);
   }
 
@@ -53,7 +52,7 @@ public class MuseumController {
 
     Coordinate coordinate = new Coordinate(latitude, longitude);
     Museum closest = museumService.getClosestMuseum(coordinate, maxDistente);
-    MuseumDto museumDto = ModelDtoConverter.modelToDto(closest);
+    MuseumDto museumDto = ModelDtoConverter.modelToDto(closest); // museum pra dto
     return ResponseEntity.ok(museumDto);
   }
 }
