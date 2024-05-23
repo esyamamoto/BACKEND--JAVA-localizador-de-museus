@@ -20,16 +20,9 @@ Neste projeto implementei uma API cuja principal funcionalidade é facilitar a b
 
 </details>
 
-## Orientações
-
 <details>
-- dependências: `mvn install -DskipTests` 
-- Para executar todos os testes basta rodar o comando: mvn test
-- Para executar apenas uma classe de testes: mvn test -Dtest="TestClassName"
-</details>
+  <summary><strong>O que foi criado:</strong></summary>
 
-<details>
-  <summary>O que foi criado:</summary><br />
 - Dockerfile para a aplicação
 - Um ControllerAdvice para tratar erros
 - rota GET `/museums/closest`, que retornará o museu mais próximo
@@ -37,7 +30,16 @@ Neste projeto implementei uma API cuja principal funcionalidade é facilitar a b
 - método getClosestMuseum na classe para a camada de serviço
 - método `createMuseum`, que cria um novo museu
 - uma classe para a camada de serviço
+
 </details>
 
+## Orientações
 
+<details>
+ 
+- dependências: `mvn install -DskipTests` 
+- Para executar todos os testes basta rodar o comando: mvn test
+- Para executar apenas uma classe de testes: mvn test -Dtest="TestClassName"
+
+</details>
 
